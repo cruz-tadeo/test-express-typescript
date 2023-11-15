@@ -1,0 +1,16 @@
+service: test-lambda-typescript
+frameworkVersion: '3'
+
+#custom:
+#tableName: 'users-table-${sls:stage}'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region:  us-west-2 #us-west-2
+
+functions:
+  api:
+    handler: dist/app/config/app.handler
+    events:
+      - httpApi: '*'  
